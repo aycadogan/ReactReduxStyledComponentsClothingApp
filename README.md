@@ -11,4 +11,3 @@ yarn add redux react-redux
 For the middlewares:
 yarn add redux-persist reselect redux-thunk redux-logger
 
-# ReactTypescriptReduxClothingApp
