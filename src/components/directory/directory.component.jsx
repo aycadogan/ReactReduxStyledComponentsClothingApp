@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 
 // import './directory.styles.scss';
 import { DirectoryMenuContainer } from './directory.styles'
@@ -8,18 +8,22 @@ import { DirectoryMenuContainer } from './directory.styles'
 import MenuItem from '../menu-item/menu-item.component';
 
 
-const Directory = () => {
-  const directory = useSelector(state => state.directory)
-  console.log(directory);
+class Directory extends React.Component {
+
+  render() {
+    const { directoryList} = this.props
     return (
       <DirectoryMenuContainer>
-        {directory.map(({ title, imageUrl, id, size }) => (
+        {directoryList.map(({ title, imageUrl, id, size }) => (
           <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} className={title}  />
         ))}
       </DirectoryMenuContainer>
     );
-  
+  }
 }
 
+const mapStateToProps = (state) => ({
+  directoryList: state.directory.sections
+})
 
-export default Directory;
+export default connect(mapStateToProps)(Directory);
