@@ -1,19 +1,20 @@
 import React from 'react';
-
-import CustomButton from '../custom-button/custom-button.component';
+import {
+  CartDropdownContainer,
+  CartDropdownButton,
+  CartItemsContainer,
+} from './cart-dropdown.styles'
 import CartItem from '../cart-item/cart-item.component';
 
-import './cart-dropdown.styles.scss';
-
 const CartDropdown = ({ cartItems }) => (
-  <div className='cart-dropdown'>
-    {/* <div className='cart-items'>
+  <CartDropdownContainer>
+    {/* <CartItemsContainer>
       {cartItems.map(cartItem => (
         <CartItem key={cartItem.id} item={cartItem} />
       ))}
-    </div> */}
-    <CustomButton>GO TO CHECKOUT</CustomButton>
-  </div>
+       </CartItemsContainer> */}
+    <CartDropdownButton>GO TO CHECKOUT</CartDropdownButton>
+  </CartDropdownContainer>
 );
 
 export default CartDropdown;

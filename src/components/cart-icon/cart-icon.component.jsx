@@ -1,14 +1,18 @@
 import React from 'react';
 
-import './cart-icon.styles.scss';
+// import './cart-icon.styles.scss';
 
-import { ReactComponent as ShoppingIcon } from 'assets/images/shopping-bag.svg';
+import {
+  CartContainer,
+  ShoppingIcon,
+  ItemCountContainer,
+} from './cart-icon.styles'
 
 const CartIcon = ({toggleCartHidden}) => (
-  <div className='cart-icon' onClick={toggleCartHidden}>
+  <CartContainer onClick={toggleCartHidden}>
     <ShoppingIcon className='shopping-icon' />
-    <span className='item-count'>0</span>
-  </div>
+    <ItemCountContainer>0</ItemCountContainer>
+  </CartContainer>
 );
 
 export default CartIcon;
