@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector} from 'react-redux'
 import {
   CartDropdownContainer,
   CartDropdownButton,
@@ -6,15 +7,19 @@ import {
 } from './cart-dropdown.styles'
 import CartItem from '../cart-item/cart-item.component';
 
-const CartDropdown = ({ cartItems }) => (
+const CartDropdown = () => {
+  
+  const cartItems = useSelector(state => state.cart.cartItems)
+
+  return(
   <CartDropdownContainer>
-    {/* <CartItemsContainer>
+    <CartItemsContainer>
       {cartItems.map(cartItem => (
         <CartItem key={cartItem.id} item={cartItem} />
       ))}
-       </CartItemsContainer> */}
+       </CartItemsContainer>
     <CartDropdownButton>GO TO CHECKOUT</CartDropdownButton>
   </CartDropdownContainer>
-);
+)};
 
 export default CartDropdown;
