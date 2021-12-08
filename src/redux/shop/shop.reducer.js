@@ -1,4 +1,10 @@
+import SHOP_DATA from "assets/data/shop"
+
 const INITIAL_STATE = {
+  collections: SHOP_DATA,
+  isFetching: false,
+  errorMessages: undefined
+
 
 }
 

@@ -15,7 +15,7 @@ import {
             <CollectionTitle>{title}</CollectionTitle>
             <CollectionItemsContainer>
                 { items.map((item) => (
-                    <>test</>
+                    <>{item.id}</>
                 ))}
             </CollectionItemsContainer>
         </CollectionPageContainer>
